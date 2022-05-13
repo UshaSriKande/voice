@@ -30,7 +30,7 @@ def run_alexa():
       print('you said'+command)
     else :
       print('you said : '+command)
-    if 'hello' in command :
+    elif 'hello' in command :
        print('hello how can i helpp you ??')
        engine_talk('hello, how can i help you ??')
     elif 'who are you' in command :
@@ -116,110 +116,118 @@ def run_alexa():
       elif 'locate ' in command :
         engine_talk('locating ...')
         loc = command.replace('locate', '')
-
-
-
-
-
-
-
-
-
-if 'on map' in loc :
-loc= loc.replace('on map',' ')
-url = 'https://google.nl/maps/place/'+loc+'/&amp;'
-webbrowser.get().open(url)
-print('Here is the location of '+loc)
-engine_talk('Here is the location of '+loc)
-elif 'on map' in command :
-engine_talk('locating ...')
-loc = command.split(" ")
-print(loc[1])
-url = 'https://google.nl/maps/place/'+loc[1] +'/&amp;'
-webbrowser.get().open(url)
-print('Here is the location of '+loc[1])
-engine_talk('Here is the location of '+loc[1])
-
-elif 'location of' in command :
-engine_talk('locating ...')
-loc = command.replace('find location of', '')
-url = 'https://google.nl/maps/place/'+loc+'/&amp;'
-webbrowser.get().open(url)
-print('Here is the location of '+loc)
-engine_talk('Here is the location of '+loc)
-elif 'where is ' in command :
-engine_talk('locating ...')
-loc = command.replace('where is', '')
-url = 'https://google.nl/maps/place/'+loc+'/&amp;'
-webbrowser.get().open(url)
-print('Here is the location of '+loc)
-engine_talk('Here is the location of '+loc)
-elif 'bootcamps' in command :
-search = 'http://tathastu.twowaits.in/index.html#courses'
-engine_talk('opening boot camps')
-webbrowser.open(search)
-elif 'boot camps' in command :
-search = 'http://tathastu.twowaits.in/index.html#courses'
-engine_talk('opening boot camps')
-webbrowser.open(search)
-elif 'python bootcamp' in command :
-search = 'http://tathastu.twowaits.in/kickstart_python.html'
-engine_talk('showing pythonboot camp')
-webbrowser.open(search)
-elif 'data science bootcamp' in command :
-search = 'http://tathastu.twowaits.in/kickstart_data_science.html'
-engine_talk('showing data science and ml bootcamp')
-webbrowser.open(search)
-elif 'open google' in command :
-print('opening google ...')
-engine_talk('opening google..')
-webbrowser.open_new('https://www.google.co.in/')
-elif 'gmail' in command :
-print('opening gmail ...')
-engine_talk('opening gmail..')
-webbrowser.open_new('https://mail.google.com/')
-elif 'open youtube' in command :
-print('opening you tube ...')
-engine_talk('opening you tube..')
-webbrowser.open_new('https://www.youtube.com/')
-elif 'open instagram' in command :
-print('opening instagram ...')
-engine_talk('opening insta gram...')
-webbrowser.open_new('https://www.instagram.com/')
-elif 'open stack overflow' in command :
-print('opening stackoverflow ...')
-engine_talk('opening stack overflow...')
-webbrowser.open_new('https://stackoverflow.com/')
-elif 'open github' in command :
-print('opening git hub ...')
-engine_talk('opening git hub...')
-webbrowser.open_new('https://github.com/')
-elif 'bye' in command:
-print('good bye, have a nice day !!')
-engine_talk('good bye, have a nice day !!')
-sys.exit()
-elif 'thank you' in command :
-print("your welcome")
-engine_talk('your welcome')
-elif 'stop' in command:
-print('good bye, have a nice day !!')
-engine_talk('good bye, have a nice day !!')
-sys.exit()
-elif 'tata' in command:
-print('good bye, have a nice day !!')
-engine_talk('good bye, have a nice day !!')
-sys.exit()
-else:
-print(' Here is what i found on the internet..')
-engine_talk('Here is what i found on the internet..')
-search = 'https://www.google.com/search?q='+command
-webbrowser.open(search)
-except Exception as ex:
-print(ex)
-print('Clearing background noise...Please wait')
-engine_talk('Clearing background noise...Please wait')
-print('\n')
-print("hello, i am mini alexa how can i help you ??")
-engine_talk ("hello i am mini alexa how can i help you ")
+      elif 'on map' in loc :
+        loc= loc.replace('on map',' ')
+        url = 'https://google.nl/maps/place/'+loc+'/&amp;'
+        webbrowser.get().open(url)
+        print('Here is the location of '+loc)
+        engine_talk('Here is the location of '+loc)
+      elif 'on map' in command :
+        engine_talk('locating ...')
+        loc = command.split(" ")
+        print(loc[1])
+        url = 'https://google.nl/maps/place/'+loc[1] +'/&amp;'
+        webbrowser.get().open(url)
+        print('Here is the location of '+loc[1])
+        engine_talk('Here is the location of '+loc[1])
+     elif 'where is ' in command :
+      engine_talk('locating ...')
+      loc = command.replace('where is', '')
+      url = 'https://google.nl/maps/place/'+loc+'/&amp;'
+      webbrowser.get().open(url)
+      print('Here is the location of '+loc)
+      engine_talk('Here is the location of '+loc)
+    elif 'bootcamps' in command :
+      search = 'http://tathastu.twowaits.in/index.html#courses'
+      engine_talk('opening boot camps')
+      webbrowser.open(search)
+    elif 'boot camps' in command :
+      search = 'http://tathastu.twowaits.in/index.html#courses'
+      engine_talk('opening boot camps')
+      webbrowser.open(search)
+    elif 'python bootcamp' in command :
+      search = 'http://tathastu.twowaits.in/kickstart_python.html'
+      engine_talk('showing pythonboot camp')
+      webbrowser.open(search)
+    elif 'data science bootcamp' in command :
+      search = 'http://tathastu.twowaits.in/kickstart_data_science.html'
+      engine_talk('showing data science and ml bootcamp')
+      webbrowser.open(search)
+    elif 'open google' in command :
+      print('opening google ...')
+      engine_talk('opening google..')
+      webbrowser.open_new('https://www.google.co.in/')
+    elif 'gmail' in command :
+      print('opening gmail ...')
+      engine_talk('opening gmail..')
+      webbrowser.open_new('https://mail.google.com/')
+    elif 'open youtube' in command :
+      print('opening you tube ...')
+      engine_talk('opening you tube..')
+      webbrowser.open_new('https://www.youtube.com/')
+    elif 'open instagram' in command :
+      print('opening instagram ...')
+      engine_talk('opening insta gram...')
+      webbrowser.open_new('https://www.instagram.com/')
+    elif 'open stack overflow' in command :
+      print('opening stackoverflow ...')
+      engine_talk('opening stack overflow...')
+      webbrowser.open_new('https://stackoverflow.com/')
+    elif 'open github' in command :
+      print('opening git hub ...')
+      engine_talk('opening git hub...')
+      webbrowser.open_new('https://github.com/')
+    elif 'bye' in command:
+      print('good bye, have a nice day !!')
+      engine_talk('good bye, have a nice day !!')
+      sys.exit()
+    elif 'thank you' in command :
+      print("your welcome")
+      engine_talk('your welcome')
+    elif 'stop' in command:
+      print('good bye, have a nice day !!')
+      engine_talk('good bye, have a nice day !!')
+      sys.exit()
+    elif 'tata' in command:
+      print('good bye, have a nice day !!')
+      engine_talk('good bye, have a nice day !!')
+      sys.exit()
+    else:
+      print(' Here is what i found on the internet..')
+      engine_talk('Here is what i found on the internet..')
+      search = 'https://www.google.com/search?q='+command
+      webbrowser.open(search)
+  except Exception as ex:
+    print(ex)
+    print('Clearing background noise...Please wait')
+    engine_talk('Clearing background noise...Please wait')
+    print('\n')
+    print("hello, i am mini alexa how can i help you ??")
+    engine_talk ("hello i am mini alexa how can i help you ")
 while True:
   run_alexa()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
